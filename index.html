@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10151f">
+  <meta name="description" content="A simple, responsive Pong game. Challenge the computer and race to seven points.">
+  <title>Pong — Classic Arcade</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Pong home"><span class="wordmark-dot"></span> PONG<span class="wordmark-period">.</span></a>
+      <span class="topbar-note">THE CLASSIC ARCADE GAME</span>
+      <button class="icon-button" id="sound-button" type="button" aria-label="Turn sound on" title="Toggle sound">♪</button>
+    </header>
+
+    <section class="game-intro" aria-labelledby="game-title">
+      <p class="eyebrow">A LITTLE FRIENDLY COMPETITION</p>
+      <h1 id="game-title">Ready to <span>rally?</span></h1>
+      <p class="subtitle">First to 7 points wins. Keep your eye on the ball.</p>
+    </section>
+
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="player-label"><span class="player-mark you-mark"></span><span>YOU</span></div>
+      <div class="score" aria-live="polite" aria-atomic="true"><span id="player-score">0</span><span class="score-divider">:</span><span id="cpu-score">0</span></div>
+      <div class="player-label cpu-label"><span>CPU</span><span class="player-mark cpu-mark"></span></div>
+    </section>
+
+    <section class="arena-wrap" aria-label="Pong game">
+      <canvas id="game-canvas" width="900" height="520" aria-label="Pong game. Use W and S or the up and down arrow keys to move your paddle."></canvas>
+      <div class="game-overlay" id="game-overlay">
+        <div class="overlay-card">
+          <span class="overlay-icon" aria-hidden="true">↗</span>
+          <h2 id="overlay-title">Your serve.</h2>
+          <p id="overlay-message">Move with <kbd>↑</kbd> <kbd>↓</kbd> or <kbd>W</kbd> <kbd>S</kbd></p>
+          <button class="primary-button" id="start-button" type="button">Start game <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="game-controls">
+      <p class="control-hint"><span class="keycap">↑</span><span class="keycap">↓</span> <span>or</span> <span class="keycap">W</span><span class="keycap">S</span> <span>to move</span><span class="hint-separator">·</span><span class="keycap">SPACE</span> <span>to pause</span></p>
+      <button class="text-button" id="restart-button" type="button">↻ <span>Restart</span></button>
+    </div>
+
+    <div class="touch-controls" aria-label="Touch paddle controls">
+      <button type="button" data-direction="up" aria-label="Move paddle up">↑</button>
+      <button type="button" data-direction="down" aria-label="Move paddle down">↓</button>
+    </div>
+
+    <footer><span>BUILT FOR THE LOVE OF THE GAME</span><span class="footer-dot">✳</span><span>NO QUARTERS REQUIRED</span></footer>
+  </main>
+</body>
+</html>
